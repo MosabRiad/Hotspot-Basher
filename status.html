@@ -1,0 +1,182 @@
+﻿<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>الحالة - انترنت</title>
+
+<style>
+@font-face {
+  font-family: 'MyCustomFont';
+  src: url('hotspot/fonts/custom-font.ttf') format('truetype');
+}
+
+:root{
+  --primary:#2b7a8f;
+  --accent:#f0b429;
+  --soft:#ffffffcc;
+}
+
+*{box-sizing:border-box;}
+body{
+  font-family:'MyCustomFont', Tahoma, Arial, sans-serif;
+  margin:0; padding:0;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(180deg,#f4fbff,#e7f4fb);
+}
+
+.main-container{
+  width:100%;
+  max-width:380px;
+  text-align:center;
+  padding:20px;
+  background:linear-gradient(180deg,#ffffffcc,#f0f8ffcc);
+  border-radius:22px;
+  box-shadow:0 8px 18px rgba(43,122,143,.12);
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+}
+
+.header-box{
+  height:140px;
+  background:linear-gradient(180deg,#f1f9fd,#e4f3f9);
+  border-radius:22px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  margin-bottom:18px;
+  box-shadow:0 6px 14px rgba(43,122,143,.12);
+}
+.header-box img{
+  width:80%;
+  height:100%;
+  object-fit:contain;
+}
+.header-box .network-title{
+  margin:6px 0 0;
+  font-size:18px;
+  font-weight:700;
+  color:#2b7a8f;
+}
+.header-box p{
+  margin:4px 0 0;
+  font-size:13px;
+  color:#555;
+}
+
+.header-progress{
+  height:6px;
+  background: rgba(255,0,0,0.15);
+  overflow:hidden;
+}
+.header-progress .slider{
+  height:100%;
+  width:30%;
+  background: linear-gradient(90deg,#2b7a8f,#4db6ac);
+  transform: translateX(-40%);
+  animation: slideHeader 3s linear infinite;
+}
+@keyframes slideHeader{
+0%{ transform: translateX(-40%); }
+100%{ transform: translateX(140%); }
+}
+
+.info-box{
+  width:100%;
+  padding:10px 12px;
+  border-radius:10px;
+  border:1px solid rgba(0,0,0,0.1);
+  background:var(--soft);
+  font-size:14px;
+  color:#333;
+  margin-bottom:10px;
+  text-align:right;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+}
+.info-box b{
+  color:var(--primary);
+}
+
+.submit-btn{
+  background:linear-gradient(90deg,#2b7a8f,#4db6ac);
+  color:#fff;
+  border:none;
+  padding:12px;
+  border-radius:25px;
+  font-size:14px;
+  cursor:pointer;
+  display:block;
+  margin:12px auto;
+  transition:all .3s ease;
+}
+.submit-btn:hover{
+  box-shadow:0 6px 18px rgba(43,122,143,.2);
+  transform:translateY(-1px);
+}
+
+.rights-box{
+  margin-top:20px;
+  font-size:11px;
+  color:#555;
+  text-align:center;
+}
+
+.hr{
+  width:80%;
+  height:1px;
+  background-color:rgba(0,0,0,0.05);
+  margin:12px auto;
+}
+
+@media(max-width:360px){
+  .main-container{max-width:340px;}
+  .header-box img{width:60%;}
+  .info-box{font-size:13px;}
+  .submit-btn{font-size:13px;padding:10px;}
+}
+</style>
+</head>
+<body>
+
+<div class="main-container">
+  <div class="header-box">
+    <img src="logoo.png" alt="شعار الشبكة">
+  </div>
+
+  <div class="header-progress"><div class="slider"></div></div>
+
+  <div class="vertical-form">
+
+    <div class="hr"></div>
+    <div class="info-box"><b>عنوان IP :</b> <span>$(ip)</span></div>
+    <div class="info-box"><b>حجم التحميل / الرفع :</b> 
+        <span>$(bytes-in-nice)</span> / <span>$(bytes-out-nice)</span>
+    </div>
+    <div class="info-box"><b>مدة الاتصال :</b> <span>$(uptime)</span></div>
+
+    $(if session-time-left)
+    <div class="info-box"><b>الوقت المتبقي :</b> <span>$(session-time-left)</span></div>
+    $(endif)
+    $(if refresh-timeout)
+    <div class="info-box"><b>الرصيد المتبقي :</b> <span>$(remain-bytes-total-nice)</span></div>
+    <div class="info-box"><b>مدة التحديث التلقائي :</b> <span>$(refresh-timeout)</span></div>
+    $(endif)
+
+    <form action="$(link-logout)" name="logout" onSubmit="return openLogout()">
+        <button type="submit" class="submit-btn">تسجيل الخروج</button>
+    </form>
+
+    <div class="rights-box">
+    © 2025 - Mosab AL-Dremly / 0 5 9 2 9 0 1 4 1 4 
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

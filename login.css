@@ -1,0 +1,168 @@
+@font-face {
+  font-family: ar;
+  src: url('ar.ttf');
+}
+
+.login {
+  background: #ffffff; /* خلفية بيضاء */
+  background-size: auto;
+  font-family: ar, sans-serif;
+  padding: 90px 0 0 0;
+  color: #333; /* النص رمادي غامق */
+}
+
+.login .logo {
+  display: block;
+  margin: 0 auto 30px;
+}
+
+.login a,
+.login a:visited {
+  text-decoration: none;
+  color: #007bff; /* روابط أزرق */
+}
+
+ul.notice {
+  margin: 30px auto;
+  width: 300px;
+  text-align: center;
+  list-style-position: inside;
+  font-size: 12px;
+  padding: 20px 30px;
+  border-radius: 6px;
+}
+
+ul.notice.errors {
+  background-color: #fff4f4;
+  border: 1px solid #f50909;
+  color: #f50909;
+}
+
+ul.notice.success {
+  background-color: #e8f5e9;
+  border: 1px solid #4caf50;
+  color: #388e3c;
+}
+
+ul.notice li {
+  padding: 5px 0;
+}
+
+.vertical-form {
+  margin: 0 auto;
+  background: #f9f9f9; /* صندوق فاتح */
+  padding: 35px;
+  max-width: 400px;
+  border-radius: 15px;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+}
+
+.vertical-form legend {
+  width: 100%;
+  font-size: 18px;
+  color: #222;
+  font-weight: 600;
+  text-align: center;
+  margin: 0 0 20px 0;
+}
+
+.vertical-form input[type='text'],
+.vertical-form input[type='password'],
+.vertical-form input[type='number'] {
+  border: 1px solid #ccc;
+  color: #333;
+  background-color: #fff;
+  height: 45px;
+  font-size: 15px;
+  padding: 8px;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  width: 95%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.vertical-form input[type='submit'] {
+  -webkit-appearance: none;
+  color: #fff;
+  background: #007bff;
+  border: none;
+  border-radius: 8px;
+  height: 50px;
+  width: 95%;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.3s ease;
+}
+
+.vertical-form input[type='submit']:hover {
+  background-color: #0056b3;
+}
+
+.vertical-form .footer {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #555;
+}
+
+.vertical-form .footer a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.vertical-form .footer a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width:768px) {
+  .login {
+    padding: 20px 0 0 0;
+  }
+}
+
+.footer {
+  position: relative;
+  top: 20px;
+}
+
+.vertical-form input[type="submit"] {
+    width: 90%;
+    padding: 12px;
+    margin-top: 15px;
+    background: #28a745 !important; /* أخضر */
+    border: none;
+    color: #fff !important;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.vertical-form input[type="submit"]:hover {
+    background: #218838 !important; /* أخضر غامق عند المرور */
+}
+
+.body, .login, .login-card, .content {
+  background: #ffffff !important;
+  color: #222 !important;
+}
+
+@font-face {
+  font-family: 'Cairo';
+  src: url('hotspot/fonts/Cairo-Regular.woff2') format('woff2');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Cairo';
+  src: url('hotspot/fonts/Cairo-Bold.woff2') format('woff2');
+  font-weight: 700;
+}
+
+body {
+  font-family: 'Cairo', Tahoma, Arial, sans-serif;
+}

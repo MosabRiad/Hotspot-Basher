@@ -1,0 +1,158 @@
+﻿<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>ابو معتز للاتصالات</title>
+
+<style>
+@font-face {
+  font-family: 'MyCustomFont';
+  src: url('hotspot/fonts/custom-font.ttf') format('truetype');
+}
+
+/* ألوان مشابهة للكود الأول */
+:root{
+  --primary:#2b7a8f;
+  --accent:#f0b429;
+  --soft:#ffffffcc;
+}
+
+/* إعدادات عامة */
+*{box-sizing:border-box;}
+body{
+  font-family:'MyCustomFont', Tahoma, Arial, sans-serif;
+  margin:0; padding:0;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(180deg,#f4fbff,#e7f4fb);
+}
+
+/* الحاوية الرئيسية */
+.main-container{
+  width:100%;
+  max-width:380px;
+  text-align:center;
+  padding:20px;
+  background:linear-gradient(180deg,#ffffffcc,#f0f8ffcc);
+  border-radius:22px;
+  box-shadow:0 8px 18px rgba(43,122,143,.12);
+}
+
+/* الهيدر */
+.header-box{
+  height:140px;
+  background:linear-gradient(180deg,#f1f9fd,#e4f3f9);
+  border-radius:22px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+  margin-bottom:18px;
+  box-shadow:0 6px 14px rgba(43,122,143,.12);
+}
+.header-box img{
+  width:80%;
+  height:100%;
+  object-fit:contain;
+}
+.header-box h2{
+  margin:6px 0 0;
+  font-size:18px;
+  color:#2b7a8f;
+  font-weight:700;
+}
+.header-box p{
+  margin:4px 0 0;
+  font-size:13px;
+  color:#555;
+}
+
+/* شريط الترحيب */
+.marquee-container{
+  margin-bottom:14px;
+  font-size:14px;
+  font-weight:600;
+  color:#555;
+  overflow:hidden;
+  white-space:nowrap;
+}
+.marquee-container span{
+  display:inline-block;
+  padding-left:100%;
+  animation:marquee 12s linear infinite;
+}
+@keyframes marquee{
+  0%{transform:translateX(0)}100%{transform:translateX(-100%)}
+}
+
+/* الفورم */
+.vertical-form{
+  padding:14px 18px 6px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+/* النص الجديد */
+.info-text{
+  margin-bottom:12px;
+  font-size:14px;
+  color:#555;
+  text-align:center;
+}
+
+/* زر الدخول */
+.submit-btn{
+  background:linear-gradient(90deg,#2b7a8f,#4db6ac);
+  color:#fff;
+  border:none;
+  padding:14px;
+  width:100%;
+  border-radius:30px;
+  font-size:16px;
+  cursor:pointer;
+  margin-top:12px;
+}
+.submit-btn:hover{
+  box-shadow:0 10px 24px rgba(43,122,143,.35);
+}
+
+/* الفوتر مطابق للكود الأول */
+.rights-box{
+  margin-top:30px;
+  font-size:11px;
+  color:#555;
+}
+</style>
+</head>
+
+<body>
+<div class="main-container">
+
+  <div class="header-box">
+    <img src="logoo.png" alt="شعار الشبكة">
+  </div>
+
+  <div class="marquee-container"><span>متميزون... دائمًا نحو الأفضل 💜</span></div>
+<br><br>
+  <form class="vertical-form" name="login" action="$(link-login)" onsubmit="return true">
+    <!-- النص الجديد -->
+    <div class="info-text">
+      مرحبًا بك! يرجى تسجيل الدخول للوصول إلى خدمة الانترنت
+    </div>
+<br><br><br><br>
+    <button type="submit" class="submit-btn">تسجيل الدخول</button>
+  </form>
+
+  <div class="rights-box">
+    © 2025 - Mosab AL-Dremly / 0 5 9 2 9 0 1 4 1 4 
+  </div>
+
+</div>
+
+</body>
+</html>
